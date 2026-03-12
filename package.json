@@ -1,0 +1,49 @@
+{
+  "name": "mcp-firewall",
+  "version": "1.0.0",
+  "description": "Prompt injection firewall middleware for MCP servers. Inspects JSON-RPC requests for prompt injection patterns and blocks suspicious requests.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "mcp-firewall": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "firewall.default.yaml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "mcp",
+    "firewall",
+    "prompt-injection",
+    "security",
+    "middleware",
+    "json-rpc",
+    "llm",
+    "ai-safety"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^25.5.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.0"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.1"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "commonjs"
+}

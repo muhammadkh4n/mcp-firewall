@@ -1,0 +1,75 @@
+[
+  {
+    "name": "simple tool call",
+    "request": {
+      "jsonrpc": "2.0",
+      "id": 100,
+      "method": "tools/call",
+      "params": {
+        "name": "calculator",
+        "arguments": {
+          "expression": "2 + 2"
+        }
+      }
+    },
+    "expectedVerdict": "pass"
+  },
+  {
+    "name": "list resources",
+    "request": {
+      "jsonrpc": "2.0",
+      "id": 101,
+      "method": "resources/list",
+      "params": {}
+    },
+    "expectedVerdict": "pass"
+  },
+  {
+    "name": "normal chat message",
+    "request": {
+      "jsonrpc": "2.0",
+      "id": 102,
+      "method": "prompts/get",
+      "params": {
+        "name": "chat",
+        "arguments": {
+          "message": "What is the weather like in San Francisco today?"
+        }
+      }
+    },
+    "expectedVerdict": "pass"
+  },
+  {
+    "name": "code assistance",
+    "request": {
+      "jsonrpc": "2.0",
+      "id": 103,
+      "method": "tools/call",
+      "params": {
+        "name": "code_review",
+        "arguments": {
+          "code": "function fibonacci(n: number): number { return n <= 1 ? n : fibonacci(n-1) + fibonacci(n-2); }",
+          "language": "typescript"
+        }
+      }
+    },
+    "expectedVerdict": "pass"
+  },
+  {
+    "name": "initialize handshake",
+    "request": {
+      "jsonrpc": "2.0",
+      "id": 104,
+      "method": "initialize",
+      "params": {
+        "protocolVersion": "0.1.0",
+        "capabilities": {},
+        "clientInfo": {
+          "name": "test-client",
+          "version": "1.0.0"
+        }
+      }
+    },
+    "expectedVerdict": "pass"
+  }
+]

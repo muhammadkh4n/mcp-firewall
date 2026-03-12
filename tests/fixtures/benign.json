@@ -1,0 +1,55 @@
+[
+  {
+    "name": "simple_question",
+    "description": "Normal benign question",
+    "request": {
+      "jsonrpc": "2.0",
+      "id": 100,
+      "method": "tools/call",
+      "params": {
+        "name": "ask",
+        "arguments": {
+          "prompt": "What is the capital of France?"
+        }
+      }
+    },
+    "expectedVerdict": "pass"
+  },
+  {
+    "name": "code_completion",
+    "description": "Normal code completion request",
+    "request": {
+      "jsonrpc": "2.0",
+      "id": 101,
+      "method": "completion/complete",
+      "params": {
+        "ref": { "type": "ref/prompt", "name": "greeting" },
+        "argument": { "name": "name", "value": "World" }
+      }
+    },
+    "expectedVerdict": "pass"
+  },
+  {
+    "name": "file_read",
+    "description": "Normal file read request",
+    "request": {
+      "jsonrpc": "2.0",
+      "id": 102,
+      "method": "resources/read",
+      "params": {
+        "uri": "file:///project/src/main.ts"
+      }
+    },
+    "expectedVerdict": "pass"
+  },
+  {
+    "name": "empty_params",
+    "description": "Request with no params",
+    "request": {
+      "jsonrpc": "2.0",
+      "id": 103,
+      "method": "tools/list"
+    },
+    "expectedVerdict": "pass"
+  }
+]

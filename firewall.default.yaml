@@ -1,0 +1,37 @@
+# mcp-firewall configuration
+# Prompt injection firewall for MCP servers
+
+thresholds:
+  # Score below this: pass (no action)
+  warn: 5
+  # Score at or above this: block the request
+  block: 8
+
+logging:
+  # Log level: debug, info, warn, error
+  level: info
+  # Output format: json or text
+  format: json
+
+# Dry-run mode: log verdicts but never block
+dryRun: false
+
+# Pattern configuration
+patterns:
+  # List of pattern IDs to enable (use ["*"] for all)
+  enabled:
+    - "*"
+  # List of pattern IDs to explicitly disable
+  disabled: []
+  # Custom patterns (added on top of built-in ones)
+  custom: []
+  # Example custom pattern:
+  # - id: my-custom-pattern
+  #   name: My Custom Pattern
+  #   category: classic-injection
+  #   description: Detects my custom attack vector
+  #   regex: "my.*pattern"
+  #   score: 7
+
+# Methods that won't be inspected (e.g., trusted internal methods)
+allowlist: []
