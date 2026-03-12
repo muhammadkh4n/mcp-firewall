@@ -1,5 +1,5 @@
 {
-  "name": "mcp-firewall",
+  "name": "@mkweb.dev/mcp-firewall",
   "version": "1.0.0",
   "description": "Prompt injection firewall middleware for MCP servers. Inspects JSON-RPC requests for prompt injection patterns and blocks suspicious requests.",
   "main": "./dist/index.js",
